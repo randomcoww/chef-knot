@@ -1,0 +1,8 @@
+name             'knot'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures knot'
+long_description 'Installs/Configures knot'
+version          '0.1.0'
+depends          'systemd_resource'
