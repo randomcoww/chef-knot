@@ -18,13 +18,13 @@ class ChefKnot
       def action_create
         converge_by("Create nsd config: #{new_resource}") do
           knot_config.run_action(:create)
-        end if !current_resource.exists || current_resource.content != new_resource.content
+        end if current_resource.content.nil? || current_resource.content != new_resource.content
       end
 
       def action_delete
         converge_by("Delete nsd config: #{new_resource}") do
           knot_config.run_action(:delete)
-        end if current_resource.exists
+        end if !current_resource.content.nil?
       end
 
       private
