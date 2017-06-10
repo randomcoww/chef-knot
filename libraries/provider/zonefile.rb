@@ -48,7 +48,7 @@ class ChefKnot
           })
           r.owner new_resource.owner
           r.group new_resource.group
-          r.atomic_update false
+          # r.atomic_update false
         end
       end
     end
