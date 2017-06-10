@@ -16,6 +16,9 @@ class ChefKnot
       property :ex, Integer, default: 604800
       property :nx, Integer, default: 86400
 
+      property :owner, String, defualt: 'knot'
+      property :group, String, default: 'knot'
+
       property :hosts, Hash
       property :zone_options, Hash, default: {}
       property :path, String, default: lazy { ::File.join(Chef::Config[:file_cache_path], 'knot', domain) }

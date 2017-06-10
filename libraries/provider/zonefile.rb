@@ -46,6 +46,8 @@ class ChefKnot
 
             hosts: new_resource.hosts
           })
+          r.owner new_resource.owner
+          r.group new_resource.group
           r.atomic_update false
         end
       end
