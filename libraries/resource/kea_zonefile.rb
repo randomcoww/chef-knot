@@ -3,7 +3,7 @@ require 'ipaddr'
 class ChefKnot
   class Resource
     class KeaZonefile < Chef::Resource
-      include MysqlConfig
+      include MysqlHelper
 
       resource_name :knot_kea_zonefile
 
@@ -43,7 +43,7 @@ class ChefKnot
       def get_lease_hosts
         result = {}
 
-        client = MysqlConfig::Client.new(timeout,
+        client = MysqlHelper::Client.new(timeout,
           username: username,
           database: database,
           host: host,
