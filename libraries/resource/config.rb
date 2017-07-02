@@ -1,6 +1,8 @@
 class ChefKnot
   class Resource
     class Config < Chef::Resource
+      include KnotHelper
+
       resource_name :knot_config
 
       default_action :create
@@ -14,8 +16,7 @@ class ChefKnot
       private
 
       def to_conf
-        ## config is very yaml like but --- separator does not work
-        config.to_hash.to_yaml.lines.drop(1).join('')
+        KnotHelper::ConfigGenerator.generate_from_hash(config)
       end
     end
   end
